@@ -3,6 +3,7 @@ package com.developers.dmaker.controller;
 import com.developers.dmaker.dto.CreateDeveloper;
 import com.developers.dmaker.dto.DeveloperDetailDto;
 import com.developers.dmaker.dto.DeveloperDto;
+import com.developers.dmaker.dto.EditDeveloper;
 import com.developers.dmaker.service.DMakerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -41,5 +42,16 @@ public class DMakerController {
         log.info("request : {}", request);
 
         return dMakerService.createDeveloper(request);
+    }
+
+
+    @PutMapping("/developer/{memberId}")
+    public DeveloperDetailDto editDeveloper(
+            @PathVariable String memberId,
+            @Valid @RequestBody EditDeveloper.Request request) {
+
+        log.info("PUT /developer/{memberId} HTTP/1.1");
+
+        return dMakerService.editDeveloper(memberId, request);
     }
 }

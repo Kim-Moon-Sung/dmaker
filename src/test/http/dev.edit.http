@@ -1,0 +1,9 @@
+### Send PUT request with jsonbody
+PUT http://localhost:8080/developer/Micky
+Content-Type: application/json
+
+{
+  "developerLevel": "JUNGNIOR",
+  "developerSkillType": "FRONT_END",
+  "experienceYears": 6
+}
