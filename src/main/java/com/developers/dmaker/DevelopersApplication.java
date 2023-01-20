@@ -1,4 +1,4 @@
-package com.developers.developers;
+package com.developers.dmaker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
