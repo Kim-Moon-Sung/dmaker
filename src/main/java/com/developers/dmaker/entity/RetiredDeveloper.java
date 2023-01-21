@@ -1,7 +1,5 @@
 package com.developers.dmaker.entity;
 
-import com.developers.dmaker.type.DeveloperLevel;
-import com.developers.dmaker.type.DeveloperSkillType;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
