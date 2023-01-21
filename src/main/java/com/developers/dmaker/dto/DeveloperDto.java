@@ -3,10 +3,7 @@ package com.developers.dmaker.dto;
 import com.developers.dmaker.entity.Developer;
 import com.developers.dmaker.type.DeveloperLevel;
 import com.developers.dmaker.type.DeveloperSkillType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
@@ -15,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NotNull
 @Builder
+@ToString
 public class DeveloperDto {
 
     private DeveloperLevel developerLevel;
