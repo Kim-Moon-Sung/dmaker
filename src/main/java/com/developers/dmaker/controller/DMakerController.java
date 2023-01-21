@@ -1,13 +1,11 @@
 package com.developers.dmaker.controller;
 
 import com.developers.dmaker.dto.*;
-import com.developers.dmaker.exception.DMakerException;
 import com.developers.dmaker.service.DMakerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class DMakerController {
     }
 
     @GetMapping("/developer/{memberId}")
-    public DeveloperDetailDto getDeveloperDetail(@PathVariable String memberId) {
+    public DeveloperDetailDto getDeveloperDetail(@PathVariable final String memberId) {
         log.info("GET /developer/{memberId} HTTP/1.1");
 
         return dMakerService.getDeveloperDetail(memberId);
@@ -34,7 +32,7 @@ public class DMakerController {
 
     @PostMapping("/create-developer")
     public CreateDeveloper.Response createDevelopers(
-            @Valid @RequestBody CreateDeveloper.Request request)
+            @Valid @RequestBody final CreateDeveloper.Request request)
     {
         log.info("request : {}", request);
 
@@ -44,8 +42,8 @@ public class DMakerController {
 
     @PutMapping("/developer/{memberId}")
     public DeveloperDetailDto editDeveloper(
-            @PathVariable String memberId,
-            @Valid @RequestBody EditDeveloper.Request request) {
+            @PathVariable final String memberId,
+            @Valid @RequestBody final EditDeveloper.Request request) {
 
         log.info("PUT /developer/{memberId} HTTP/1.1");
 
@@ -54,7 +52,7 @@ public class DMakerController {
 
     @DeleteMapping("developer/{memberId}")
     public DeveloperDetailDto deleteDeveloper(
-            @PathVariable String memberId
+            @PathVariable final String memberId
     ) {
         return dMakerService.deleteDeveloper(memberId);
     }
